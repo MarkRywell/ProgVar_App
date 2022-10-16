@@ -61,22 +61,39 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/coverPhoto.png
     - assets/progvarLogo.png
-    - assets/angel.JPG
-    - assets/joshua.JPG
-    - assets/mark.jpg
-    - assets/chelsea.JPG
-    - assets/gerarld.JPG
-    - assets/don.JPG
-    - assets/johnray.JPG
-    - assets/lloyd.JPG
-    - assets/tommy.JPG
-    - assets/christian.JPG
-    - assets/jane.JPG
-    - assets/charles.JPG
-    - assets/jack.JPG
-    - assets/jon.JPG
     - assets/ustp_logo1.png
+    - assets/core/agbon.jpg
+    - assets/core/angel.jpg
+    - assets/core/charles.jpg
+    - assets/core/chelsea.jpg
+    - assets/core/christian.jpg
+    - assets/core/don.JPG
+    - assets/core/jack.JPG
+    - assets/core/jane.jpg
+    - assets/core/johnray.jpg
+    - assets/core/jon.jpg
+    - assets/core/joshua.jpg
+    - assets/core/lloyd.JPG
+    - assets/core/los_banos.jpg
+    - assets/core/mark.jpg
+    - assets/core/tommy.jpg
+    - assets/interns/angelo.jpg
+    - assets/interns/dan.jpg
+    - assets/interns/harold.jpg
+    - assets/interns/hennah.jpg
+    - assets/interns/janeth.jpg
+    - assets/interns/janith.jpg
+    - assets/interns/kate.jpg
+    - assets/interns/kent.jpg
+    - assets/interns/krishia.jpg
+    - assets/interns/nathan.jpg
+    - assets/interns/neil.jpg
+    - assets/interns/nicah.jpg
+    - assets/interns/selwyn.jpg
+    - assets/interns/sherri.jpg
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:practice/navigation_drawer_widget.dart';
+import 'package:practice/navigation_endDrawer_widget.dart';
 
 class ProgVar extends StatefulWidget {
   const ProgVar({Key? key, required this.title}) : super(key: key);
@@ -14,25 +15,30 @@ class _ProgVarState extends State<ProgVar> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: NavigationDrawerWidget(),
+      endDrawer: NavigationEndDrawer(),
       appBar: AppBar(
         title: const Text("Programmer's Varsity"),
         backgroundColor: Colors.yellow[700],
         foregroundColor: Colors.indigo[900],
-        leading: Builder(builder: (BuildContext context) {
-          return CircleAvatar(
-            backgroundImage: const AssetImage('assets/progvarLogo.png'),
-            backgroundColor: Colors.yellow[700],
-            child: IconButton(
-              icon: const Icon(null),
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              },
-              tooltip:
-              MaterialLocalizations.of(context).openAppDrawerTooltip,
-            ),
-          );
-        },
+      actions: [
+        Padding(padding:EdgeInsets.only(right: 10),
+            child: Builder(
+              builder: (context) =>(
+                CircleAvatar(
+                    backgroundImage: const AssetImage('assets/progvarLogo.png'),
+                    backgroundColor: Colors.yellow,
+                    child: InkWell(
+                      child: Icon(null),
+                      onTap:(){
+                        Scaffold.of(context).openEndDrawer();
+                      },
+                    )
+                )
+              )
+            )
         ),
+
+      ],
       ),
       body: Container(
         decoration: const BoxDecoration(

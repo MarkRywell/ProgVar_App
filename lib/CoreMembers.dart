@@ -2,6 +2,19 @@
 
 import 'package:flutter/material.dart';
 import 'package:practice/navigation_drawer_widget.dart';
+import 'package:practice/user_page.dart';
+
+class User {
+  final String name;
+  final String position;
+  final String Avatar;
+
+  const User({
+    required this.name,
+    required this.position,
+    required this.Avatar,
+  });
+}
 
 class CoreMembers extends StatefulWidget {
   const CoreMembers({Key? key, required this.title}) : super(key: key);
@@ -12,6 +25,85 @@ class CoreMembers extends StatefulWidget {
 }
 
 class _CoreMembersState extends State<CoreMembers> {
+  List<User> users = [
+    const User(
+      name: 'Angel Rose Naval',
+      position: 'CEO',
+      Avatar: 'assets/core/angel.jpg'
+    ),
+    const User(
+        name: 'Joshua Ryle Bracho',
+        position: 'COO',
+        Avatar: 'assets/core/joshua.jpg'
+    ),
+    const User(
+        name: 'Charles Sabuero',
+        position: 'Creative Director',
+        Avatar: 'assets/core/charles.jpg'
+    ),
+    const User(
+        name: 'Deborah Jane Auguis',
+        position: 'Senior Front-End Developer',
+        Avatar: 'assets/core/jane.jpg'
+    ),
+    const User(
+        name: 'John Ray Cañete',
+        position: 'Front-End Developer',
+        Avatar: 'assets/core/johnray.jpg'
+    ),
+    const User(
+        name: 'Asareel Don Peña',
+        position: 'Front-End Developer',
+        Avatar: 'assets/core/don.JPG'
+    ),
+    const User(
+        name: 'Gerarld Agbon',
+        position: 'Front-End Developer',
+        Avatar: 'assets/core/agbon.jpg'
+    ),
+    const User(
+        name: 'Lloyd Vincent Singayan',
+        position: 'Front-End Developer',
+        Avatar: 'assets/core/lloyd.JPG'
+    ),
+    const User(
+        name: 'Christian De Asis',
+        position: 'Senior Back-End Developer',
+        Avatar: 'assets/core/christian.jpg'
+    ),
+    const User(
+        name: 'Mark Rywell Gaje',
+        position: 'Senior Back-End Developer',
+        Avatar: 'assets/core/mark.jpg'
+    ),
+    const User(
+        name: 'Ernest James Usaraga',
+        position: 'Back-End Developer',
+        Avatar: 'assets/core/tommy.jpg'
+    ),
+    const User(
+        name: 'John Christian Los Baños',
+        position: 'Back-End Developer',
+        Avatar: 'assets/core/los_banos.jpg'
+    ),
+    const User(
+        name: 'Chelsea Shaira Tibudan',
+        position: 'QA Tester',
+        Avatar: 'assets/core/chelsea.jpg'
+    ),
+    const User(
+        name: 'Jon Clark Paner',
+        position: 'QA Tester',
+        Avatar: 'assets/core/jon.jpg'
+    ),
+    const User(
+        name: 'Jacques Caesar Salalima',
+        position: 'Multimedia',
+        Avatar: 'assets/core/jack.JPG'
+    ),
+
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +112,7 @@ class _CoreMembersState extends State<CoreMembers> {
         backgroundColor: Colors.yellow[700],
         foregroundColor: Colors.indigo[900],
         title: const Text("Core Members"),
-        leading: Builder(builder: (BuildContext context) {
+        /*leading: Builder(builder: (BuildContext context) {
           return CircleAvatar(
             backgroundImage: const AssetImage('assets/progvarLogo.png'),
             backgroundColor: Colors.yellow[700],
@@ -35,89 +127,37 @@ class _CoreMembersState extends State<CoreMembers> {
           );
         },
 
-        ),
+        ),*/
         actions: const [
-
+          Padding(padding:EdgeInsets.only(right: 10),
+          child:Icon(Icons.person))
         ],
       ),
 
-      body: ListView(
-        children: const [
-          ListTile(
-            title: Text("Angel Rose Naval"),
-            leading: CircleAvatar (backgroundImage: AssetImage('assets/angel.JPG')),
-            subtitle: Text("CEO"),
-          ),
-          ListTile(
-            title: Text("Joshua Ryle Bracho"),
-            leading: CircleAvatar (backgroundImage: AssetImage('assets/joshua.JPG')),
-            subtitle: Text("COO"),
-          ),
-          ListTile(
-            title: Text("Charles Sabuero"),
-            leading: CircleAvatar (backgroundImage: AssetImage('assets/charles.JPG')),
-            subtitle: Text("Senior Front-End Developer"),
-          ),
-          ListTile(
-            title: Text("Jane Auguis"),
-            leading: CircleAvatar (backgroundImage: AssetImage('assets/jane.JPG')),
-            subtitle: Text("Front-End Developer"),
-          ),
-          ListTile(
-            title: Text("John Ray Cañete"),
-            leading: CircleAvatar (backgroundImage: AssetImage('assets/johnray.JPG')),
-            subtitle: Text("Front-End Developer"),
-          ),
-          ListTile(
-            title: Text("Asareel Don Peña"),
-            leading: CircleAvatar (backgroundImage: AssetImage('assets/don.JPG')),
-            subtitle: Text("Front-End Developer"),
-          ),
-          ListTile(
-            title: Text("Lloyd Vincent Singayan"),
-            leading: CircleAvatar (backgroundImage: AssetImage('assets/lloyd.JPG')),
-            subtitle: Text("Front-End Developer"),
-          ),
-          ListTile(
-            title: Text("Gerarld Agbon"),
-            leading: CircleAvatar (backgroundImage: AssetImage('assets/gerarld.JPG')),
-            subtitle: Text("Front-End Developer"),
-          ),
-          ListTile(
-            title: Text("Christian De Asis"),
-            leading: CircleAvatar (backgroundImage: AssetImage('assets/christian.JPG')),
-            subtitle: Text("Senior Back-End Developer"),
-          ),
-          ListTile(
-            title: Text("Mark Rywell Gaje"),
-            leading: CircleAvatar (backgroundImage: AssetImage('assets/mark.jpg')),
-            subtitle: Text("Senior Back-End Developer"),
-          ),
-          ListTile(
-            title: Text("Ernest James Usaraga"),
-            leading: CircleAvatar (backgroundImage: AssetImage('assets/tommy.JPG')),
-            subtitle: Text("Back-End Developer"),
-          ),
-          ListTile(
-            title: Text("Chelsea Shaira Tibudan"),
-            leading: CircleAvatar (backgroundImage: AssetImage('assets/chelsea.JPG')),
-            subtitle: Text("QA Tester"),
-          ),
-          ListTile(
-            title: Text("Jon Clark Paner"),
-            leading: CircleAvatar (backgroundImage: AssetImage('assets/jon.JPG')),
-            subtitle: Text("QA Tester"),
-          ),
-          ListTile(
-            title: Text("Jacques Caesar Salalima"),
-            leading: CircleAvatar (backgroundImage: AssetImage('assets/jack.JPG')),
-            subtitle: Text("QA Tester"),
-          ),
-        ],
-
+      body: ListView.builder(
+        itemCount: users.length,
+        itemBuilder: (context, index) {
+          final user = users[index];
+          return Card(
+            child: ListTile(
+              leading: CircleAvatar(
+                backgroundImage: AssetImage(user.Avatar),
+              ),
+              title: Text(user.name),
+              subtitle: Text(user.position),
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => UserPage(user: user),
+                ));
+              },
+            ),
+          );
+        }
       ),
-
 
     );
+
   }
 }
+
+
