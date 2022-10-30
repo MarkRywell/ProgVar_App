@@ -5,7 +5,8 @@ class NavigationEndDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context){
-    return SizedBox(
+    return Container(
+      padding: const EdgeInsets.only(top: 50),
       width: MediaQuery.of(context).size.width * 0.60,
       child: Drawer(
           child: ListView(

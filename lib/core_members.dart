@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:practice/navigation_drawer_widget.dart';
+import 'package:practice/navigation_endDrawer_widget.dart';
 import 'package:practice/user_page.dart';
 
 class User {
@@ -28,12 +29,12 @@ class _CoreMembersState extends State<CoreMembers> {
   List<User> users = [
     const User(
       name: 'Angel Rose Naval',
-      position: 'CEO',
+      position: 'Chief Executive Officer',
       Avatar: 'assets/core/angel.jpg'
     ),
     const User(
         name: 'Joshua Ryle Bracho',
-        position: 'COO',
+        position: 'Chief Operation Officer',
         Avatar: 'assets/core/joshua.jpg'
     ),
     const User(
@@ -47,14 +48,14 @@ class _CoreMembersState extends State<CoreMembers> {
         Avatar: 'assets/core/jane.jpg'
     ),
     const User(
+        name: 'Asareel Don Peña',
+        position: 'Senior Front-End Developer',
+        Avatar: 'assets/core/don.JPG'
+    ),
+    const User(
         name: 'John Ray Cañete',
         position: 'Front-End Developer',
         Avatar: 'assets/core/johnray.jpg'
-    ),
-    const User(
-        name: 'Asareel Don Peña',
-        position: 'Front-End Developer',
-        Avatar: 'assets/core/don.JPG'
     ),
     const User(
         name: 'Gerarld Agbon',
@@ -78,7 +79,7 @@ class _CoreMembersState extends State<CoreMembers> {
     ),
     const User(
         name: 'Ernest James Usaraga',
-        position: 'Back-End Developer',
+        position: 'Senior Back-End Developer',
         Avatar: 'assets/core/tommy.jpg'
     ),
     const User(
@@ -98,16 +99,16 @@ class _CoreMembersState extends State<CoreMembers> {
     ),
     const User(
         name: 'Jacques Caesar Salalima',
-        position: 'Multimedia',
+        position: 'Multimedia Director',
         Avatar: 'assets/core/jack.JPG'
     ),
-
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: const NavigationDrawerWidget(),
+      endDrawer: const NavigationEndDrawer(),
       appBar: AppBar(
         backgroundColor: Colors.yellow[700],
         foregroundColor: Colors.indigo[900],
@@ -128,9 +129,26 @@ class _CoreMembersState extends State<CoreMembers> {
         },
 
         ),*/
-        actions: const [
+        actions: [
           Padding(padding:EdgeInsets.only(right: 10),
-          child:Icon(Icons.person))
+          child: Builder(
+            builder: (context) => (
+              CircleAvatar(
+                  backgroundImage: const AssetImage('assets/progvarLogo.png'),
+                  backgroundColor: Colors.yellow,
+                  child: InkWell(
+                    child: Icon(null),
+                    onTap:(){
+                      Scaffold.of(context).openEndDrawer();
+                    },
+                  )
+              )
+            )
+          )
+
+
+          )
+
         ],
       ),
 
