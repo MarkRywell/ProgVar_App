@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:practice/CoreMembers.dart';
+import 'package:practice/members.dart';
 
 class UserPage extends StatelessWidget {
-  final User user;
+  final Member user;
 
   const UserPage({
     Key? key,
@@ -20,7 +20,7 @@ class UserPage extends StatelessWidget {
         child: Column(
           children: [
             Image.asset(
-              user.Avatar,
+              user.avatar,
               height: 400,
               width: double.infinity,
               fit: BoxFit.cover,
@@ -34,9 +34,10 @@ class UserPage extends StatelessWidget {
               ),
             ),
             Text(
-              "Halu Ferson!",
+              user.position,
               style: const TextStyle(
-                fontSize: 25,
+                  height: 2,
+                fontSize: 20
             )
             )
           ],

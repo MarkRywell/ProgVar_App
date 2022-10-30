@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:practice/navigation_drawer_widget.dart';
-import 'package:practice/navigation_endDrawer_widget.dart';
+import 'package:practice/custom_widgets/navigation_drawer_widget.dart';
+import 'package:practice/custom_widgets/navigation_endDrawer_widget.dart';
 
 class ProgVar extends StatefulWidget {
   const ProgVar({Key? key, required this.title}) : super(key: key);
@@ -14,21 +14,21 @@ class _ProgVarState extends State<ProgVar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: NavigationDrawerWidget(),
-      endDrawer: NavigationEndDrawer(),
+      drawer: const NavigationDrawerWidget(),
+      endDrawer: const NavigationEndDrawer(),
       appBar: AppBar(
         title: const Text("Programmer's Varsity"),
         backgroundColor: Colors.yellow[700],
         foregroundColor: Colors.indigo[900],
       actions: [
-        Padding(padding:EdgeInsets.only(right: 10),
+        Padding(padding: const EdgeInsets.only(right: 10),
             child: Builder(
               builder: (context) =>(
                 CircleAvatar(
                     backgroundImage: const AssetImage('assets/progvarLogo.png'),
                     backgroundColor: Colors.yellow,
                     child: InkWell(
-                      child: Icon(null),
+                      child: const Icon(null),
                       onTap:(){
                         Scaffold.of(context).openEndDrawer();
                       },
@@ -41,6 +41,7 @@ class _ProgVarState extends State<ProgVar> {
       ],
       ),
       body: Container(
+        padding: const EdgeInsets.only(top: 10),
         decoration: const BoxDecoration(
             image: DecorationImage(
                 opacity: 0.1,

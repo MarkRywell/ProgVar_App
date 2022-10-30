@@ -1,21 +1,10 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:practice/navigation_drawer_widget.dart';
-import 'package:practice/navigation_endDrawer_widget.dart';
+import 'package:practice/custom_widgets/navigation_drawer_widget.dart';
+import 'package:practice/custom_widgets//navigation_endDrawer_widget.dart';
 import 'package:practice/user_page.dart';
-
-class User {
-  final String name;
-  final String position;
-  final String Avatar;
-
-  const User({
-    required this.name,
-    required this.position,
-    required this.Avatar,
-  });
-}
+import 'package:practice/members.dart';
 
 class CoreMembers extends StatefulWidget {
   const CoreMembers({Key? key, required this.title}) : super(key: key);
@@ -26,81 +15,81 @@ class CoreMembers extends StatefulWidget {
 }
 
 class _CoreMembersState extends State<CoreMembers> {
-  List<User> users = [
-    const User(
+  List<Member> users = [
+    const Member(
       name: 'Angel Rose Naval',
       position: 'Chief Executive Officer',
-      Avatar: 'assets/core/angel.jpg'
+      avatar: 'assets/core/angel.jpg'
     ),
-    const User(
+    const Member(
         name: 'Joshua Ryle Bracho',
         position: 'Chief Operation Officer',
-        Avatar: 'assets/core/joshua.jpg'
+        avatar: 'assets/core/joshua.jpg'
     ),
-    const User(
+    const Member(
         name: 'Charles Sabuero',
         position: 'Creative Director',
-        Avatar: 'assets/core/charles.jpg'
+        avatar: 'assets/core/charles.jpg'
     ),
-    const User(
+    const Member(
         name: 'Deborah Jane Auguis',
         position: 'Senior Front-End Developer',
-        Avatar: 'assets/core/jane.jpg'
+        avatar: 'assets/core/jane.jpg'
     ),
-    const User(
+    const Member(
         name: 'Asareel Don Peña',
         position: 'Senior Front-End Developer',
-        Avatar: 'assets/core/don.JPG'
+        avatar: 'assets/core/don.JPG'
     ),
-    const User(
+    const Member(
         name: 'John Ray Cañete',
         position: 'Front-End Developer',
-        Avatar: 'assets/core/johnray.jpg'
+        avatar: 'assets/core/johnray.jpg'
     ),
-    const User(
+    const Member(
         name: 'Gerarld Agbon',
         position: 'Front-End Developer',
-        Avatar: 'assets/core/agbon.jpg'
+        avatar: 'assets/core/agbon.jpg'
     ),
-    const User(
+    const Member(
         name: 'Lloyd Vincent Singayan',
         position: 'Front-End Developer',
-        Avatar: 'assets/core/lloyd.JPG'
+        avatar: 'assets/core/lloyd.JPG'
     ),
-    const User(
+    const Member(
         name: 'Christian De Asis',
         position: 'Senior Back-End Developer',
-        Avatar: 'assets/core/christian.jpg'
+        avatar: 'assets/core/christian.jpg'
     ),
-    const User(
+    const Member(
         name: 'Mark Rywell Gaje',
         position: 'Senior Back-End Developer',
-        Avatar: 'assets/core/mark.jpg'
+        avatar: 'assets/core/mark.jpg'
     ),
-    const User(
+    const Member(
         name: 'Ernest James Usaraga',
         position: 'Senior Back-End Developer',
-        Avatar: 'assets/core/tommy.jpg'
+        avatar: 'assets/core/tommy.jpg'
     ),
-    const User(
+    const Member(
         name: 'John Christian Los Baños',
         position: 'Back-End Developer',
-        Avatar: 'assets/core/los_banos.jpg'
+        avatar: 'assets/core/los_banos.jpg'
     ),
-    const User(
+    const Member(
         name: 'Chelsea Shaira Tibudan',
         position: 'QA Tester',
-        Avatar: 'assets/core/chelsea.jpg'
+        avatar: 'assets/core/chelsea.jpg'
     ),
-    const User(
+    const Member(
         name: 'Jon Clark Paner',
         position: 'QA Tester',
-        Avatar: 'assets/core/jon.jpg'
+        avatar: 'assets/core/jon.jpg'
     ),
-    const User(
+    const Member(
         name: 'Jacques Caesar Salalima',
         position: 'Multimedia Director',
-        Avatar: 'assets/core/jack.JPG'
+        avatar: 'assets/core/jack.JPG'
     ),
   ];
 
@@ -130,25 +119,22 @@ class _CoreMembersState extends State<CoreMembers> {
 
         ),*/
         actions: [
-          Padding(padding:EdgeInsets.only(right: 10),
-          child: Builder(
-            builder: (context) => (
-              CircleAvatar(
-                  backgroundImage: const AssetImage('assets/progvarLogo.png'),
-                  backgroundColor: Colors.yellow,
-                  child: InkWell(
-                    child: Icon(null),
-                    onTap:(){
-                      Scaffold.of(context).openEndDrawer();
-                    },
+          Padding(padding: const EdgeInsets.only(right: 10),
+              child: Builder(
+                  builder: (context) => (
+                      CircleAvatar(
+                          backgroundImage: const AssetImage('assets/progvarLogo.png'),
+                          backgroundColor: Colors.yellow,
+                          child: InkWell(
+                            child: const Icon(null),
+                            onTap:(){
+                              Scaffold.of(context).openEndDrawer();
+                            },
+                          )
+                      )
                   )
               )
-            )
           )
-
-
-          )
-
         ],
       ),
 
@@ -159,7 +145,7 @@ class _CoreMembersState extends State<CoreMembers> {
           return Card(
             child: ListTile(
               leading: CircleAvatar(
-                backgroundImage: AssetImage(user.Avatar),
+                backgroundImage: AssetImage(user.avatar),
               ),
               title: Text(user.name),
               subtitle: Text(user.position),

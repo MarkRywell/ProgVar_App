@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:practice/ProgVar.dart';
+import 'package:practice/prog_var.dart';
 
 void main() => runApp(
     const SimpleApp()

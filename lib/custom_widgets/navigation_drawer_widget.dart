@@ -1,10 +1,7 @@
-import 'package:practice/CoreMembers.dart';
-import 'package:practice/ProgVar.dart';
+import 'package:practice/core_members.dart';
+import 'package:practice/prog_var.dart';
 import 'package:flutter/material.dart';
-
-String dropDownValues = 'Members';
-
-var items = ["Core Members", "Interns"];
+import 'package:practice/interns.dart';
 
 class NavigationDrawerWidget extends StatelessWidget {
   const NavigationDrawerWidget({super.key});
@@ -12,7 +9,7 @@ class NavigationDrawerWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context){
     return Container(
-        padding: const EdgeInsets.only(top: 50),
+        padding: const EdgeInsets.only(top: 36),
         width: MediaQuery.of(context).size.width * 0.60,
         child: Drawer(
             child: Container(
@@ -26,7 +23,6 @@ class NavigationDrawerWidget extends StatelessWidget {
                             width: 250,
                             height: 70.0,
                             child: const DrawerHeader (
-                              child: const Text(''),
                               decoration: BoxDecoration(
                                   color: Colors.yellow,
                                   image: DecorationImage(
@@ -35,6 +31,7 @@ class NavigationDrawerWidget extends StatelessWidget {
                               ),
                               //box decoration
                               margin: EdgeInsets.zero,
+                              child: Text(''),
                             ),
                           ),
                         ListTile(
@@ -53,9 +50,36 @@ class NavigationDrawerWidget extends StatelessWidget {
                         Column(
                           children: [
                             ExpansionTile(
-                              title: Text('Members'),
+                              title: const Text('Members'),
                               children: [
-                                ListTile(
+                                Padding(
+                                  padding: const EdgeInsets.only(left:20),
+                                  child: ListTile(
+                                    title:
+                                    const Text("Core Members",
+                                      style: TextStyle(),
+                                    ),
+                                    onTap: () {
+                                      Navigator.push(context, MaterialPageRoute(builder: (context) {
+                                        return const CoreMembers(title: "Core Members");
+                                      }));
+                                    },
+                                  ),
+                                ),
+
+                                Padding(
+                                    padding: const EdgeInsets.only(left: 20),
+                                    child: ListTile(
+                                      title:
+                                      const Text("Interns",
+                                        style: TextStyle(),
+                                      ),
+                                      onTap: () {
+                                        Navigator.push(context, MaterialPageRoute(builder: (context) {
+                                          return const Interns(title: "Intern Members");
+                                        }));
+                                      },
+                                    )
                                 )
                               ],
                             )
