@@ -1,7 +1,10 @@
 import 'package:practice/core_members.dart';
 import 'package:practice/prog_var.dart';
 import 'package:flutter/material.dart';
-import 'package:practice/interns.dart';
+import 'package:practice/tabs/first_year.dart';
+import 'package:practice/tabs/fourth_year.dart';
+import 'package:practice/tabs/second_year.dart';
+import 'package:practice/tabs/third_year.dart';
 
 class NavigationDrawerWidget extends StatelessWidget {
   const NavigationDrawerWidget({super.key});
@@ -69,16 +72,57 @@ class NavigationDrawerWidget extends StatelessWidget {
 
                                 Padding(
                                     padding: const EdgeInsets.only(left: 20),
-                                    child: ListTile(
+                                    child: ExpansionTile(
                                       title:
                                       const Text("Interns",
                                         style: TextStyle(),
                                       ),
-                                      onTap: () {
-                                        Navigator.push(context, MaterialPageRoute(builder: (context) {
-                                          return const Interns(title: "Intern Members");
-                                        }));
-                                      },
+                                      children: [
+                                        Padding(
+                                          padding: const EdgeInsets.only(left:20),
+                                          child: ListTile(
+                                            title: const Text("1st Year"),
+                                            onTap: () {
+                                              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                                                return const FirstYear();
+                                              }));
+                                            },
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.only(left:20),
+                                          child: ListTile(
+                                            title: const Text("2nd Year"),
+                                            onTap: () {
+                                              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                                                return const SecondYear();
+                                              }));
+                                            },
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.only(left:20),
+                                          child: ListTile(
+                                            title: const Text("3rd Year"),
+                                            onTap: () {
+                                              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                                                return const ThirdYear();
+                                              }));
+                                            },
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding: const EdgeInsets.only(left:20),
+                                          child: ListTile(
+                                            title: const Text("4th Year"),
+                                            onTap: () {
+                                              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                                                return const FourthYear();
+                                              }));
+                                            },
+                                          ),
+                                        ),
+                                      ],
                                     )
                                 )
                               ],

@@ -102,22 +102,6 @@ class _CoreMembersState extends State<CoreMembers> {
         backgroundColor: Colors.yellow[700],
         foregroundColor: Colors.indigo[900],
         title: const Text("Core Members"),
-        /*leading: Builder(builder: (BuildContext context) {
-          return CircleAvatar(
-            backgroundImage: const AssetImage('assets/progvarLogo.png'),
-            backgroundColor: Colors.yellow[700],
-            child: IconButton(
-                icon: const Icon(null),
-                onPressed: () {
-                  Scaffold.of(context).openDrawer();
-                },
-              tooltip:
-              MaterialLocalizations.of(context).openAppDrawerTooltip,
-                ),
-          );
-        },
-
-        ),*/
         actions: [
           Padding(padding: const EdgeInsets.only(right: 10),
               child: Builder(
