@@ -11,8 +11,10 @@ class NavigationDrawerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context){
+
+    Size size = MediaQuery.of(context).size;
+
     return Container(
-        padding: const EdgeInsets.only(top: 36),
         width: MediaQuery.of(context).size.width * 0.60,
         child: Drawer(
             child: Container(
@@ -21,7 +23,9 @@ class NavigationDrawerWidget extends StatelessWidget {
                   children: [
                     Column(
                       children: [
-                       Container(
+                        Padding(
+                          padding: EdgeInsets.only(top: size.height * 0.046),
+                          child:Container(
                             color: Colors.yellow[700],
                             width: 250,
                             height: 70.0,
@@ -37,6 +41,8 @@ class NavigationDrawerWidget extends StatelessWidget {
                               child: Text(''),
                             ),
                           ),
+                        ),
+
                         ListTile(
                           contentPadding: const EdgeInsets.only(left:15, top:20),
                           title: const Text("What is ProgVar",
@@ -77,50 +83,64 @@ class NavigationDrawerWidget extends StatelessWidget {
                                       const Text("Interns",
                                         style: TextStyle(),
                                       ),
+                                      childrenPadding: EdgeInsets.zero,
                                       children: [
                                         Padding(
                                           padding: const EdgeInsets.only(left:20),
-                                          child: ListTile(
-                                            title: const Text("1st Year"),
-                                            onTap: () {
-                                              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                                                return const FirstYear();
-                                              }));
-                                            },
+                                          child: SizedBox(
+                                            height: 40,
+                                            child: ListTile(
+                                              title: const Text("1st Year"),
+                                              onTap: () {
+                                                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                                                  return const FirstYear();
+                                                }));
+                                              },
+                                            ),
+                                          ),
+                                        ),
+
+                                        Padding(
+                                          padding: const EdgeInsets.only(left:20),
+                                          child: SizedBox(
+                                            height: 40,
+                                            child: ListTile(
+                                              title: const Text("2nd Year"),
+                                              onTap: () {
+                                                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                                                  return const SecondYear();
+                                                }));
+                                              },
+                                            ),
                                           ),
                                         ),
                                         Padding(
                                           padding: const EdgeInsets.only(left:20),
-                                          child: ListTile(
-                                            title: const Text("2nd Year"),
-                                            onTap: () {
-                                              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                                                return const SecondYear();
-                                              }));
-                                            },
+                                          child: SizedBox(
+                                            height: 40,
+                                            child: ListTile(
+                                              title: const Text("3rd Year"),
+                                              onTap: () {
+                                                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                                                  return const ThirdYear();
+                                                }));
+                                              },
+                                            ),
                                           ),
                                         ),
                                         Padding(
-                                          padding: const EdgeInsets.only(left:20),
-                                          child: ListTile(
-                                            title: const Text("3rd Year"),
-                                            onTap: () {
-                                              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                                                return const ThirdYear();
-                                              }));
-                                            },
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.only(left:20),
-                                          child: ListTile(
-                                            title: const Text("4th Year"),
-                                            onTap: () {
-                                              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                                                return const FourthYear();
-                                              }));
-                                            },
-                                          ),
+                                          padding: const EdgeInsets.only(left:20, bottom: 10),
+                                          child: SizedBox(
+                                            height: 40,
+                                            child: ListTile(
+                                              title: const Text("4th Year"),
+                                              onTap: () {
+                                                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                                                  return const FourthYear();
+                                                }));
+                                              },
+                                            ),
+                                          )
                                         ),
                                       ],
                                     )
