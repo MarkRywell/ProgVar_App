@@ -1,19 +1,39 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:practice/forms/login_page.dart';
 
 class NavigationEndDrawer extends StatelessWidget {
   const NavigationEndDrawer ({super.key});
 
   @override
   Widget build(BuildContext context){
+
+    Size size = MediaQuery.of(context).size;
+
     return Container(
-      padding: const EdgeInsets.only(top: 36),
-      width: MediaQuery.of(context).size.width * 0.60,
+      width: MediaQuery.of(context).size.width * 0.50,
       child: Drawer(
           child: ListView(
-            children: const [
-                  ListTile()
+            children: [
+              Padding(
+                padding: EdgeInsets.only(top: 40, bottom: 20),
+                child: CircleAvatar(
+                  radius: 70,
+                  child: Icon(Icons.person),
+                ),
+              ),
+              ElevatedButton(
+                child: Text("LOGIN",
+                style: TextStyle(fontFamily: 'Berlin Sans FB Demi'),),
+                onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => LoginPage(),
+                      )
+                    );
+                },
+              )
             ],
           )
       ),
