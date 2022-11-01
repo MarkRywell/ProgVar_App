@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:practice/prog_var.dart';
+import 'package:practice/animation_start.dart';
 
 void main() => runApp(
     const SimpleApp()
@@ -17,7 +17,7 @@ class SimpleApp extends StatelessWidget {
         primarySwatch: Colors.orange,
       )),
       debugShowCheckedModeBanner: false,
-      home: const ProgVar(title: "Programmer's Varsity"),
+      home: AnimationStart()
 
     );
   }

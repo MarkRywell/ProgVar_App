@@ -13,6 +13,9 @@ class ProgVar extends StatefulWidget {
 class _ProgVarState extends State<ProgVar> {
   @override
   Widget build(BuildContext context) {
+    
+    Size size = MediaQuery.of(context).size;
+    
     return Scaffold(
       drawer: const NavigationDrawerWidget(),
       endDrawer: const NavigationEndDrawer(),
@@ -48,13 +51,25 @@ class _ProgVarState extends State<ProgVar> {
                 image: AssetImage('assets/ustp_logo1.png'))),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
-          children: const [
+          children: [
             Padding(
               padding: EdgeInsets.all(5),
               child:
               Text("What is Programmer's Varsity?",
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
-                textAlign: TextAlign.left),),
+                textAlign: TextAlign.left),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 5),
+              child: Material(
+                elevation: 15.0,
+                child: Image.asset(
+                  'assets/group1.jpg',
+                  width: size.width * 0.9,
+                  height: size.height * 0.2,
+                )
+              )
+            ),
 
             Padding(padding: EdgeInsets.only(left:10, right: 10, top: 20),
                 child: Text(
