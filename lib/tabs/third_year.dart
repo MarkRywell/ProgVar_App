@@ -25,6 +25,11 @@ class _ThirdYearState extends State<ThirdYear> {
         position: "Intern - Back-End Developer",
         avatar: "assets/progvarLogo.png"
     ),
+    Member(
+        name: "Jake Lourence Villar",
+        position: "Intern - Back-End Developer",
+        avatar: "assets/progvarLogo.png"
+    ),
   ];
 
   @override

@@ -26,20 +26,26 @@ class UserPage extends StatelessWidget {
               fit: BoxFit.cover,
             ),
             const SizedBox(height: 16),
-            Text(
-              user.name,
-              style: const TextStyle(
-                fontSize: 30,
-                fontWeight: FontWeight.bold,
+            Container(
+              child: Text(
+                user.name,
+                style: const TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
-            Text(
-              user.position,
-              style: const TextStyle(
-                  height: 2,
-                fontSize: 20
+            FittedBox(
+              fit: BoxFit.fitWidth,
+              child: Text(
+                  user.position,
+                  style: const TextStyle(
+                      height: 2,
+                      fontSize: 20
+                  )
+              )
             )
-            )
+
           ],
         ),
       )
