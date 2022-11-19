@@ -23,17 +23,36 @@ class NavigationEndDrawer extends StatelessWidget {
                   child: Icon(Icons.person),
                 ),
               ),
-              ElevatedButton(
-                child: Text("LOGIN",
-                style: TextStyle(fontFamily: 'Berlin Sans FB Demi'),),
-                onPressed: () {
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: ElevatedButton(
+                  child: Text("LOGIN",
+                    style: TextStyle(fontFamily: 'Berlin Sans FB Demi'),),
+                  onPressed: () {
                     Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => LoginPage(),
-                      )
+                        MaterialPageRoute(
+                          builder: (context) => LoginPage(),
+                        )
                     );
-                },
-              )
+                  },
+                ),
+              ),
+
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 20),
+                child: ElevatedButton(
+                  child: Text("REGISTER",
+                    style: TextStyle(fontFamily: 'Berlin Sans FB Demi'),),
+                  onPressed: () {
+                    Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => LoginPage(),
+                        )
+                    );
+                  },
+                ),
+              ),
+
             ],
           )
       ),

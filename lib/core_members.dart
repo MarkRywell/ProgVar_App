@@ -69,7 +69,7 @@ class _CoreMembersState extends State<CoreMembers> {
     const Member(
         name: 'Ernest James Usaraga',
         position: 'Senior Back-End Developer',
-        avatar: 'assets/core/tommy.jpg'
+        avatar: 'assets/core/tommy.JPG'
     ),
     const Member(
         name: 'John Christian Los Baños',

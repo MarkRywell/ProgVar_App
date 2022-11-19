@@ -71,7 +71,7 @@ class _ProgVarState extends State<ProgVar> {
               )
             ),
 
-            Padding(padding: EdgeInsets.only(left:10, right: 10, top: 20),
+            Padding(padding: EdgeInsets.only(left:20, right: 20, top: 20),
                 child: Text(
                   "Programmer's Varsity is a division of SITE that focuses on programming. "
                       "It is well-known for being academically inclined and having individuals "
