@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:practice/animation_start.dart';
+import 'package:animated_splash_screen/animated_splash_screen.dart';
+import 'package:practice/prog_var.dart';
 
 void main() => runApp(
     const SimpleApp()
@@ -17,7 +18,13 @@ class SimpleApp extends StatelessWidget {
         primarySwatch: Colors.orange,
       )),
       debugShowCheckedModeBanner: false,
-      home: AnimationStart()
+      home: AnimatedSplashScreen(
+        splash: Image.asset('assets/logo1.png'),
+        nextScreen: const ProgVar(title: "Programmer's Varsity"),
+        splashTransition: SplashTransition.fadeTransition,
+        splashIconSize: 350,
+        backgroundColor: Color(0xFFFBC02D),
+      )
 
     );
   }
