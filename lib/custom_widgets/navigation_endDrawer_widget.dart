@@ -29,11 +29,10 @@ class NavigationEndDrawer extends StatelessWidget {
                   child: Text("LOGIN",
                     style: TextStyle(fontFamily: 'Berlin Sans FB Demi'),),
                   onPressed: () {
-                    Navigator.of(context).push(
-                        MaterialPageRoute(
-                          builder: (context) => LoginPage(),
-                        )
-                    );
+                      Navigator.pushAndRemoveUntil(context,
+                      MaterialPageRoute(builder: (context) => LoginPage()
+                        ), (route) => false
+                      );
                   },
                 ),
               ),

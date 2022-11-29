@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
-import 'package:practice/prog_var.dart';
+import 'package:flutter/material.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:practice/forms/login_page.dart';
 
 void main() => runApp(
     const SimpleApp()
@@ -12,6 +13,7 @@ class SimpleApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context){
+
     return MaterialApp (
       title: "ProgVar App",
       theme: (ThemeData(
@@ -20,13 +22,15 @@ class SimpleApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: AnimatedSplashScreen(
         splash: Image.asset('assets/logo1.png'),
-        nextScreen: const ProgVar(title: "Programmer's Varsity"),
+        splashIconSize: 200,
+        duration: 3000,
+        nextScreen: LoginPage(),
         splashTransition: SplashTransition.fadeTransition,
-        splashIconSize: 350,
+        pageTransitionType: PageTransitionType.fade,
         backgroundColor: Color(0xFFFBC02D),
-      )
 
+      )
     );
   }
-
 }
+
